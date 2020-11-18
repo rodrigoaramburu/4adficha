@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<svg width="300" height="300">  
+    <filter id="noise">
+        <feTurbulence x="0" y="0" baseFrequency="0.03" numOctaves="5" seed="1" />
+        <feDisplacementMap in="SourceGraphic" scale="20" />
+    </filter>
+  <rect x="0" y="0" width="100%" height="100%" filter="url(#noise)" fill="#F00" />
+</svg>
