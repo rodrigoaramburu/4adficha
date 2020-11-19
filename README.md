@@ -4,14 +4,14 @@ Ficha para o RPG solo Four Agaist Darkness, lançado no Brasil pela Retropunk [h
 
 Projeto feito para o estudo do React. 
 
-Acesso: [http://4adficha.botecodigital.dev.br/](http://4adficha.botecodigital.dev.br/)
+Acesso: [https://4adficha.botecodigital.dev.br/](http://4adficha.botecodigital.dev.br/)
 
 ## Rodar
 
 ### `npm start`
 
 Rodar o aplicativo en modo desenvolvedor.\
-Open [http://localhost:3000](http://localhost:3000) para ver no navegador.
+Abrir [http://localhost:3000](http://localhost:3000) para ver no navegador.
 
 
 ### `npm run build`
