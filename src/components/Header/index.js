@@ -78,7 +78,7 @@ function Header() {
 
 
     function exportToJson() {
-        let filename = "export-ficas.json";
+        let filename = "export-fichas.json";
         let contentType = "application/json;charset=utf-8;";
 
         if (window.navigator && window.navigator.msSaveOrOpenBlob) {
@@ -115,10 +115,9 @@ function Header() {
 
     function scrollPersonagem(event) {
         let position = event.target.getAttribute('data-posicao');
-        console.log(position);
+        console.log(event.target);
         let top = document.querySelector(`#personagem-${position}`).offsetTop;
         window.scrollTo({ top: top, behavior: 'smooth' });
-        console.log(document.querySelector('#personagem-3'));
     }
 
     return (
@@ -133,8 +132,8 @@ function Header() {
 
                 <div>
                     <HeaderPersonagemButton onClick={scrollPersonagem} data-posicao={0}>
-                        <span className="num">1</span>
-                        <span className="nome">
+                        <span className="num" data-posicao={0}>1</span>
+                        <span className="nome" data-posicao={0}>
                             {personagemState.getPersonagem(0).nome === '' &&
                                 'Personagem'
                             }
@@ -143,9 +142,9 @@ function Header() {
                     </HeaderPersonagemButton>
 
                     <HeaderPersonagemButton onClick={scrollPersonagem} data-posicao={1}>
-                        <span className="num">2</span>
+                        <span className="num" data-posicao={1}>2</span>
 
-                        <span className="nome">
+                        <span className="nome" data-posicao={1}>
                             {personagemState.getPersonagem(1).nome === '' &&
                                 'Personagem'
                             }
@@ -154,8 +153,8 @@ function Header() {
                     </HeaderPersonagemButton>
 
                     <HeaderPersonagemButton onClick={scrollPersonagem} data-posicao={2}>
-                        <span className="num">3</span>
-                        <span className="nome">
+                        <span className="num" data-posicao={2}>3</span>
+                        <span className="nome" data-posicao={2}>
 
                             {personagemState.getPersonagem(2).nome === '' &&
                                 'Personagem'
@@ -165,8 +164,8 @@ function Header() {
                     </HeaderPersonagemButton>
 
                     <HeaderPersonagemButton onClick={scrollPersonagem} data-posicao={3}>
-                        <span className="num">4</span>
-                        <span className="nome">
+                        <span className="num" data-posicao={3}>4</span>
+                        <span className="nome" data-posicao={3}>
 
                             {personagemState.getPersonagem(3).nome === '' &&
                                 'Personagem'

@@ -169,7 +169,7 @@ function EquipamentoField({ posicao }) {
                                 />
                             </td>
                             <td style={{width:'30px'}}>
-                                <TrashButton onClick={removeEquipamento} index={i} title="Remover equipamento">X</TrashButton>
+                                <TrashButton onClick={removeEquipamento} data-index={i} title="Remover equipamento">X</TrashButton>
                             </td>
                         </tr>
                     ))}

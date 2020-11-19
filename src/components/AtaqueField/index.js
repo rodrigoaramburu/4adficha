@@ -95,7 +95,7 @@ function AtaqueField({ posicao }) {
         if( !window.confirm('Realmente deseja remover o modificador de ataque?')){
             return;
         }
-        let index = event.target.getAttribute('index');
+        let index = event.target.getAttribute('data-index');
         let modificadores = personagemState.getPersonagem(posicao).ataqueModificadores;
 
         modificadores.splice(index, 1);
@@ -150,7 +150,7 @@ function AtaqueField({ posicao }) {
                             </td>
 
                             <td>
-                                <TrashButton onClick={removeModificador} index={i}  title="Remover modificador de ataque">x</TrashButton>
+                                <TrashButton onClick={removeModificador} data-index={i}  title="Remover modificador de ataque">x</TrashButton>
                             </td>
                         </tr>
                     ))}

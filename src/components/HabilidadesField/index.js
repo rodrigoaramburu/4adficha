@@ -107,7 +107,7 @@ function HabilidadesField({ posicao }) {
                                 />
                             </td>
                             <td style={{width:'30px'}}>
-                                <TrashButton onClick={removeHabilidade} title="Remover Habilidade">X</TrashButton>
+                                <TrashButton onClick={removeHabilidade} data-index={i} title="Remover Habilidade">X</TrashButton>
                             </td>
                         </tr>
                     ))}

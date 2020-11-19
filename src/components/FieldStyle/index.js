@@ -35,7 +35,11 @@ export const ButtonAdicionar = styled.button`
 `;
 
 
-export const TrashButton = styled.button`
+export const TrashButton = styled.button.attrs(
+    props => ({
+        'data-index': props['data-index'] ,
+      })
+)`
     padding: 3px 7px;
     color: #F00;
     background-image: url(${Trash});

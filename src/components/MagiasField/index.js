@@ -180,7 +180,7 @@ function MagiasField({ posicao }) {
                                 />
                             </td>
                             <td style={{ width: '30px' }}>
-                                <TrashButton onClick={removeMagia} title="Remover Magia">X</TrashButton>
+                                <TrashButton onClick={removeMagia} data-index={i} title="Remover Magia">X</TrashButton>
                             </td>
                         </tr>
                     ))}

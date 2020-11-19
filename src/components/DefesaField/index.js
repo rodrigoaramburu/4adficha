@@ -90,7 +90,7 @@ function DefesaField({ posicao }) {
         if( !window.confirm('Realmente deseja remover o modificador de Defesa?')){
             return;
         }
-        let index = event.target.getAttribute('index');
+        let index = event.target.getAttribute('data-index');
         let modificadores = personagemState.getPersonagem(posicao).defesaModificadores;
 
         modificadores.splice(index, 1);
@@ -145,7 +145,7 @@ function DefesaField({ posicao }) {
                             </td>
 
                             <td>
-                                <TrashButton onClick={removeModificador} index={i}  title="Remover modificador de defesa">x</TrashButton>
+                                <TrashButton onClick={removeModificador} data-index={i}  title="Remover modificador de defesa">x</TrashButton>
                             </td>
                         </tr>
                     ))}
