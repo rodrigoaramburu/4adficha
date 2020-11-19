@@ -90,7 +90,6 @@ function AtaqueField({ posicao }) {
         personagemState.setPersonagemProperty(posicao, 'ataqueModificadores', Object.assign([], modificadores));
     }
 
-
     function removeModificador(event){
         if( !window.confirm('Realmente deseja remover o modificador de ataque?')){
             return;
@@ -112,7 +111,7 @@ function AtaqueField({ posicao }) {
                 <InputBox type="number" readOnly value={personagemState.getTotalAtaque(posicao)} />
                 <ButtonAdicionar onClick={addModificador} title="Adicionar modificador de ataque">+</ButtonAdicionar>
             </AtaqueDisplay>
-            <TableAtaqueModificadores>
+            <TableAtaqueModificadores className="modificadores-ataque">
                 <tbody>
                     {personagemState.getPersonagem(posicao).ataqueModificadores.map((modificador, i) => (
                         <tr key={i}>
@@ -135,6 +134,7 @@ function AtaqueField({ posicao }) {
                                     placeholder="Mod."
                                     onChange={changeModificadorHandler}
                                     style={ modificador.invalido ? {borderColor: '#F00',borderWidth: '1px',borderStyle: 'solid'} : {} }
+                                    title="Aceita expressões aritméticoa. N equivale o nível."
                                 />
                             </td>
                             <td>

@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import {usePersonagemState} from "../../hooks/usePersonagemState";
 
-import LanternaIcon from '../../assets/lanterna.svg';
+import PetrificadoIcon from '../../assets/petrificado.svg';
 
-const LabelLanterna = styled.label`
+const LabelPetrificado = styled.label`
     cursor: pointer;
     & i::after{
         content: '';
         display: block;
         width: 36px;
         height: 36px;
-        background-image: url(${LanternaIcon});
+        background-image: url(${PetrificadoIcon});
+        background-size: 100%;
         filter: opacity(30%);
     }
 
@@ -35,33 +36,33 @@ const LabelLanterna = styled.label`
 
 `;
 
-function LanternaField({posicao}){
+function PetrificadoField({posicao}){
 
     const personagemState = usePersonagemState();
 
     function changeHandler(event){
-        personagemState.setPersonagemProperty(posicao, 'portandoLanterna', event.target.checked);
+        personagemState.setPersonagemProperty(posicao, 'petrificado', event.target.checked);
         
     }
 
     return (
         <div>
-            <LabelLanterna htmlFor={`lanterna${posicao}`}>
-                <div>Usando Lanterna</div>
+            <LabelPetrificado htmlFor={`petrificado${posicao}`}>
+                <div>Usando Petrificado</div>
                 <input 
                     type="checkbox"
-                    name={`lanterna${posicao}`}
-                    id={`lanterna${posicao}`}
-                    checked={personagemState.getPersonagem(posicao).portandoLanterna}
+                    name={`petrificado${posicao}`}
+                    id={`petrificado${posicao}`}
+                    checked={personagemState.getPersonagem(posicao).petrificado}
                     onChange={changeHandler} 
                     
                 />
-                <i title="Habilitar/Desabilitar portando lanterna"></i>
-            </LabelLanterna>
+                <i title="Habilitar/Desabilitar se está Petrificado"></i>
+            </LabelPetrificado>
 
         </div>
     );
 }
 
 
-export default LanternaField;
+export default PetrificadoField;

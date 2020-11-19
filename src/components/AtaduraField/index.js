@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import {usePersonagemState} from "../../hooks/usePersonagemState";
 
-import LanternaIcon from '../../assets/lanterna.svg';
+import AtaduraIcon from '../../assets/atadura.svg';
 
-const LabelLanterna = styled.label`
+const LabelAtadura = styled.label`
     cursor: pointer;
     & i::after{
         content: '';
         display: block;
         width: 36px;
         height: 36px;
-        background-image: url(${LanternaIcon});
+        background-image: url(${AtaduraIcon});
         filter: opacity(30%);
     }
 
@@ -35,33 +35,33 @@ const LabelLanterna = styled.label`
 
 `;
 
-function LanternaField({posicao}){
+function AtaduraField({posicao}){
 
     const personagemState = usePersonagemState();
 
     function changeHandler(event){
-        personagemState.setPersonagemProperty(posicao, 'portandoLanterna', event.target.checked);
+        personagemState.setPersonagemProperty(posicao, 'utilizouAtadura', event.target.checked);
         
     }
 
     return (
         <div>
-            <LabelLanterna htmlFor={`lanterna${posicao}`}>
-                <div>Usando Lanterna</div>
+            <LabelAtadura htmlFor={`atadura${posicao}`}>
+                <div>Usando Atadura</div>
                 <input 
                     type="checkbox"
-                    name={`lanterna${posicao}`}
-                    id={`lanterna${posicao}`}
-                    checked={personagemState.getPersonagem(posicao).portandoLanterna}
+                    name={`atadura${posicao}`}
+                    id={`atadura${posicao}`}
+                    checked={personagemState.getPersonagem(posicao).utilizouAtadura}
                     onChange={changeHandler} 
                     
                 />
-                <i title="Habilitar/Desabilitar portando lanterna"></i>
-            </LabelLanterna>
+                <i title="Habilitar/Desabilitar se já utilizou atadura"></i>
+            </LabelAtadura>
 
         </div>
     );
 }
 
 
-export default LanternaField;
+export default AtaduraField;

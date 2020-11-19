@@ -12,6 +12,8 @@ import EquipamentoField from '../EquipamentoField';
 import MagiasField from '../MagiasField';
 import HabilidadesField from '../HabilidadesField';
 import { usePersonagemState } from '../../hooks/usePersonagemState';
+import AtaduraField from '../AtaduraField';
+import PetrificadoField from '../PetrificadoField';
 
 
 const ClasseNivelContainer = styled.div`
@@ -40,8 +42,12 @@ const ContainerClasseNivelPO = styled.div`
     
 `;
 
-const ContainerLanterna = styled.div`
+const ContainerStatus = styled.div`
     margin:10px;
+
+    @media(max-width: 680px){
+        display: flex;
+    }
 `;
 
 const ContainerVidaAtaqueDefesa = styled.div`
@@ -108,9 +114,11 @@ function Personagem({ posicao }) {
                     </ClasseNivelContainer>
                 </div>
 
-                <ContainerLanterna>
+                <ContainerStatus>
                     <LanternaField posicao={posicao} />
-                </ContainerLanterna>
+                    <AtaduraField posicao={posicao} />
+                    <PetrificadoField posicao={posicao} />
+                </ContainerStatus>
             </ContainerClasseNivelPO>
 
 

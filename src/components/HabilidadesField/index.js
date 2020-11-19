@@ -24,6 +24,7 @@ const ContainerTituloHabilidade = styled.div`
         width: 32px;
         height: 32px;
         vertical-align: middle;
+        margin-right:10px;
     }
 `;
 
