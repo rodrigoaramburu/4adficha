@@ -8,6 +8,7 @@ import { PersonagemModel } from './hooks/usePersonagemState';
 import FundoMadeira from './assets/fundo-madeira.jpg';
 import Header from './components/Header';
 import ToTopoButton from './components/ToTopoButton';
+import Rodape from './components/Rodape';
 
 
 const AppContainer = styled.div`
@@ -79,6 +80,7 @@ function App() {
 
       </PersonagemContext.Provider>
 
+      <Rodape />
       <ToTopoButton />
     </AppContainer>
   );
