@@ -51,6 +51,7 @@ export function usePersonagemState() {
    
     const [personagensState, setPersonagensState] = useContext(PersonagemContext);
     
+    
     function getPersonagem(posicao){
         return personagensState[posicao];
     }
@@ -110,12 +111,13 @@ export function usePersonagemState() {
 
 
     function novo(){
-        setPersonagensState([
-            new PersonagemModel(),
-            new PersonagemModel(),
-            new PersonagemModel(),
-            new PersonagemModel(),
-          ]);
+        setPersonagensState({
+            0: new PersonagemModel(),
+            1: new PersonagemModel(),
+            2: new PersonagemModel(),
+            3: new PersonagemModel(),
+            anotacoes: '',
+        });
         
           window.localStorage.removeItem('personagens');
     }
@@ -149,6 +151,21 @@ export function usePersonagemState() {
         setPersonagensState(data);
     }
 
+    function getAnotacoes(){
+        return personagensState.anotacoes;
+    }
+
+    function setAnotacoes(value){
+        
+
+        personagensState.anotacoes = value;
+        setPersonagensState(
+            Object.assign({}, Object.assign({}, personagensState))
+        );
+
+        window.localStorage.setItem('personagens', JSON.stringify( personagensState ));
+    }
+
     return {
         getPersonagem,
         setPersonagemProperty,
@@ -157,6 +174,8 @@ export function usePersonagemState() {
         novo,
         getData,
         setData,
-        changePosition
+        changePosition,
+        getAnotacoes,
+        setAnotacoes
     }
 }

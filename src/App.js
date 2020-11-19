@@ -9,6 +9,7 @@ import FundoMadeira from './assets/fundo-madeira.jpg';
 import Header from './components/Header';
 import ToTopoButton from './components/ToTopoButton';
 import Rodape from './components/Rodape';
+import Anotacao from './components/Anotacoes';
 
 
 const AppContainer = styled.div`
@@ -46,12 +47,13 @@ function App() {
   let personagens = localStorage.getItem('personagens');
 
   if (personagens == null) {
-    personagens = [
-      new PersonagemModel(),
-      new PersonagemModel(),
-      new PersonagemModel(),
-      new PersonagemModel(),
-    ]
+    personagens = {
+     0: new PersonagemModel(),
+     1: new PersonagemModel(),
+     2: new PersonagemModel(),
+     3: new PersonagemModel(),
+     anotacoes: '',
+    }
   } else {
     personagens = JSON.parse(personagens);
   }
@@ -78,12 +80,17 @@ function App() {
 
         </MainContainer>
 
-      </PersonagemContext.Provider>
 
       <Rodape />
+      
       <ToTopoButton />
+      
+      <Anotacao />
+      
+      </PersonagemContext.Provider>
     </AppContainer>
   );
 }
 
 export default App;
+
