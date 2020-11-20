@@ -14,6 +14,7 @@ export class PersonagemModel{
         this.portandoLanterna = false;
         this.utilizouAtadura = false;
         this.petrificado = false;
+        this.po = 0;
         this.vida = {
             atual: 0,
             total: 0
