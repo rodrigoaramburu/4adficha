@@ -14,6 +14,7 @@ import HabilidadesField from '../HabilidadesField';
 import { usePersonagemState } from '../../hooks/usePersonagemState';
 import AtaduraField from '../AtaduraField';
 import PetrificadoField from '../PetrificadoField';
+import PistaField from '../PistaField';
 
 
 const ClasseNivelContainer = styled.div`
@@ -111,6 +112,7 @@ function Personagem({ posicao }) {
                         <ClasseField posicao={posicao} />
                         <NivelField posicao={posicao} />
                         <POField posicao={posicao} />
+                        <PistaField posicao={posicao} />
                     </ClasseNivelContainer>
                 </div>
 
