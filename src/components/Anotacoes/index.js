@@ -79,23 +79,38 @@ function Anotacao() {
 
     const [show, setShow] = useState(true);
 
-    function onChangeHandler(event){
+    function onChangeHandler(event) {
         personagemState.setAnotacoes(event.target.value);
     }
 
-    function toggle(){
-        setShow( !show);
+    function keydownHandler(event) {
+
+        if (event.key === 'Tab') {
+            event.preventDefault();
+            const textarea = document.querySelector("#anotacoes");
+            let start = textarea.selectionStart;
+            let end = textarea.selectionEnd;
+            let value = event.target.value;
+            value = value.substring(0, start) + "\t" + value.substring(end);
+            personagemState.setAnotacoes(value);
+        }
+    }
+
+    function toggle() {
+        setShow(!show);
     }
     return (
-        <AnotacaoContainer  className={ show ? 'hidden': ''}>
+        <AnotacaoContainer className={show ? 'hidden' : ''}>
             <div className="inner-container">
                 <h2 onClick={toggle}>Anotações</h2>
             </div>
             <ContainerAnotacaoTexto>
-                <textarea 
+                <textarea
+                    id="anotacoes"
                     value={personagemState.getAnotacoes()}
                     onChange={onChangeHandler}
-                    ></textarea>
+                    onKeyDown={keydownHandler}
+                ></textarea>
             </ContainerAnotacaoTexto>
         </AnotacaoContainer>
     );
