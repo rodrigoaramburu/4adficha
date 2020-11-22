@@ -73,7 +73,7 @@ export function usePersonagemState() {
             if( atqMod.habilitado ){
                 atqMod.invalido = false;
                 if(atqMod.modificador !== '' ){
-                    let mod = atqMod.modificador.replace('N',personagensState[posicao].nivel);
+                    let mod = atqMod.modificador.replace(/N/ig,personagensState[posicao].nivel);
                     try{
                         total += Math.floor( evaluate(mod) );
                     }catch{
@@ -95,7 +95,7 @@ export function usePersonagemState() {
             if( atqMod.habilitado ){
                 atqMod.invalido = false;
                 if(atqMod.modificador !== '' ){
-                    let mod = atqMod.modificador.replace('N',personagensState[posicao].nivel);
+                    let mod = atqMod.modificador.replace(/N/ig,personagensState[posicao].nivel);
                     try{
                         total += Math.floor( evaluate(mod) );
                     }catch{

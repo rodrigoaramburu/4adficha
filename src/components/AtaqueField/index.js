@@ -134,7 +134,7 @@ function AtaqueField({ posicao }) {
                                     placeholder="Mod."
                                     onChange={changeModificadorHandler}
                                     style={ modificador.invalido ? {borderColor: '#F00',borderWidth: '1px',borderStyle: 'solid'} : {} }
-                                    title="Aceita expressões aritméticoa. N equivale o nível."
+                                    title="Aceita expressões aritméticas. N equivale o nível."
                                 />
                             </td>
                             <td>

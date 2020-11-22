@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import styled from "styled-components";
 
 
