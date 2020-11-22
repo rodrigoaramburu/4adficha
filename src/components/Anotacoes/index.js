@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import { usePersonagemState } from "../../hooks/usePersonagemState";
 
@@ -77,7 +77,10 @@ function Anotacao() {
 
     const personagemState = usePersonagemState();
 
+    const textareaRef = useRef();
+
     const [show, setShow] = useState(true);
+    const [cursorPosition, setCursorPosition] = useState(0);
 
     function onChangeHandler(event) {
         personagemState.setAnotacoes(event.target.value);
@@ -87,12 +90,16 @@ function Anotacao() {
 
         if (event.key === 'Tab') {
             event.preventDefault();
-            const textarea = document.querySelector("#anotacoes");
-            let start = textarea.selectionStart;
-            let end = textarea.selectionEnd;
+            let start = event.target.selectionStart;
+            let end = event.target.selectionEnd;
             let value = event.target.value;
             value = value.substring(0, start) + "\t" + value.substring(end);
             personagemState.setAnotacoes(value);
+            if (textareaRef.current) {
+                textareaRef.current.value = value
+                textareaRef.current.selectionStart = textareaRef.current.selectionEnd = start + 1
+              }
+            //textareaRef.current.setSelectionRange(start + 1, start + 1);
         }
     }
 
@@ -106,6 +113,7 @@ function Anotacao() {
             </div>
             <ContainerAnotacaoTexto>
                 <textarea
+                    ref={textareaRef}
                     id="anotacoes"
                     value={personagemState.getAnotacoes()}
                     onChange={onChangeHandler}
