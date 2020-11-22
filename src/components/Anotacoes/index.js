@@ -80,7 +80,6 @@ function Anotacao() {
     const textareaRef = useRef();
 
     const [show, setShow] = useState(true);
-    const [cursorPosition, setCursorPosition] = useState(0);
 
     function onChangeHandler(event) {
         personagemState.setAnotacoes(event.target.value);
@@ -98,8 +97,7 @@ function Anotacao() {
             if (textareaRef.current) {
                 textareaRef.current.value = value
                 textareaRef.current.selectionStart = textareaRef.current.selectionEnd = start + 1
-              }
-            //textareaRef.current.setSelectionRange(start + 1, start + 1);
+            }
         }
     }
 
