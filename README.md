@@ -21,6 +21,6 @@ Cosntruir o app para a produção na pasta `build`.
 
 ##### Créditos
 ###### Icones: 
-Lanterna - [https://www.iconfinder.com/haseba](https://www.iconfinder.com/haseba)
+Lanterna - [https://www.iconfinder.com/haseba](https://www.iconfinder.com/haseba)\
 Mochila - [Icon Fonts](http://www.onlinewebfonts.com/icon)
 
