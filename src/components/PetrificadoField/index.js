@@ -26,6 +26,7 @@ const LabelPetrificado = styled.label`
     }
     & input{
         visibility: hidden;
+        display: none;
     }
 
     @media(max-width:640px){

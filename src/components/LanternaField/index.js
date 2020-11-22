@@ -24,7 +24,7 @@ const LabelLanterna = styled.label`
         overflow:hidden;
     }
     & input{
-        visibility: hidden;
+        display:none;
     }
 
     @media(max-width:640px){

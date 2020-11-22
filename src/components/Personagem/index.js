@@ -15,6 +15,7 @@ import { usePersonagemState } from '../../hooks/usePersonagemState';
 import AtaduraField from '../AtaduraField';
 import PetrificadoField from '../PetrificadoField';
 import PistaField from '../PistaField';
+import MortoField from '../MortoField';
 
 
 const ClasseNivelContainer = styled.div`
@@ -44,8 +45,11 @@ const ContainerClasseNivelPO = styled.div`
 `;
 
 const ContainerStatus = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
     margin:10px;
-
+    
     @media(max-width: 680px){
         display: flex;
     }
@@ -120,6 +124,7 @@ function Personagem({ posicao }) {
                     <LanternaField posicao={posicao} />
                     <AtaduraField posicao={posicao} />
                     <PetrificadoField posicao={posicao} />
+                    <MortoField posicao={posicao} />
                 </ContainerStatus>
             </ContainerClasseNivelPO>
 
