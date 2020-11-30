@@ -124,7 +124,7 @@ function Header() {
         <HeaderContainer>
             <div className="wrap">
                 <div>
-                    <h1>Ficha <abbr title="Four Agaist Darkness">4AD</abbr>(alpha)</h1>
+                    <h1>Ficha <abbr title="Four Against Darkness">4AD</abbr>(alpha)</h1>
                     <ButtonHeader onClick={novasFichas} title="Novo conjunto de ficha">Novo</ButtonHeader>
                     <ButtonHeader onClick={exportToJson} title="Exportar fichas para o computador">Salvar</ButtonHeader>
                     <ButtonHeader onClick={loadJson} title="Carregar fichas do computador">Carregar</ButtonHeader>
