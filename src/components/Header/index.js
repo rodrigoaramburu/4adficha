@@ -25,6 +25,17 @@ const HeaderContainer = styled.header`
         width:100%;
     }
 
+    @media(min-width: 1200px){
+        .botoesPersonagens{
+            position: fixed;
+            left: 10px;
+            bottom:10px;
+        }
+        .botoesPersonagens button{
+            display: block;
+        }
+    }
+
 `;
 
 const ButtonHeader = styled.button`
@@ -130,7 +141,7 @@ function Header() {
                     <ButtonHeader onClick={loadJson} title="Carregar fichas do computador">Carregar</ButtonHeader>
                 </div>
 
-                <div>
+                <div className="botoesPersonagens">
                     <HeaderPersonagemButton onClick={scrollPersonagem} data-posicao={0}>
                         <span className="num" data-posicao={0}>1</span>
                         <span className="nome" data-posicao={0}>
